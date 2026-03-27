@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResetReviveRefocus | Premium Mobile Wellness &amp; Physical Therapy</title>
+  <meta
+    name="description"
+    content="ResetReviveRefocus offers premium mobile physical therapy and elite muscle recovery in Cape Town &amp; Surrounds."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#121212',
+            gold: '#D4AF37',
+            emerald: '#0B6623',
+            mist: '#A0AEC0',
+            chalk: '#F7F7F5',
+            panel: '#181818'
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            sans: ['Montserrat', 'sans-serif']
+          },
+          boxShadow: {
+            gold: '0 0 0 1px rgba(212, 175, 55, 0.15), 0 24px 60px rgba(0, 0, 0, 0.38)',
+            'gold-lg': '0 0 0 1px rgba(212, 175, 55, 0.35), 0 30px 80px rgba(212, 175, 55, 0.12)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 14% 0%, rgba(212, 175, 55, 0.12), transparent 30%),
+        radial-gradient(circle at 88% 14%, rgba(11, 102, 35, 0.12), transparent 18%),
+        radial-gradient(circle at 74% 84%, rgba(212, 175, 55, 0.06), transparent 20%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 16%),
+        #121212;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 120px 120px;
+      opacity: 0.04;
+      z-index: -1;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fade-up 0.8s ease-out both;
+    }
+
+    .fade-up-delay {
+      animation: fade-up 0.8s ease-out 0.12s both;
+    }
+
+    .rrr-emblem {
+      display: block;
+      color: #D4AF37;
+      filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.09));
+    }
+
+    .rrr-emblem--hero {
+      width: min(100%, 24rem);
+      margin-inline: auto;
+    }
+
+    .rrr-emblem--nav {
+      width: 2.6rem;
+      flex-shrink: 0;
+    }
+
+    .rrr-emblem--footer {
+      width: 2.8rem;
+      flex-shrink: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply font-sans text-white antialiased;
+      }
+    }
+
+    @layer components {
+      .shell {
+        @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
+      }
+
+      .kicker {
+        @apply inline-flex items-center rounded-full border border-gold/25 bg-white/[0.04] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-gold;
+      }
+
+      .title {
+        @apply font-display text-3xl leading-tight text-gold sm:text-4xl lg:text-5xl;
+      }
+
+      .body-copy {
+        @apply text-sm leading-7 text-mist sm:text-base;
+      }
+
+      .nav-link {
+        @apply text-sm font-medium uppercase tracking-[0.16em] text-mist transition duration-300 hover:text-white;
+      }
+
+      .btn-primary {
+        @apply inline-flex items-center justify-center rounded-full border border-emerald bg-emerald px-6 py-3 text-sm font-semibold text-gold transition duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-emerald/90 hover:shadow-[0_0_30px_rgba(11,102,35,0.38)];
+      }
+
+      .btn-secondary {
+        @apply inline-flex items-center justify-center rounded-full border border-gold/60 bg-transparent px-6 py-3 text-sm font-semibold text-gold transition duration-300 hover:-translate-y-0.5 hover:bg-gold/10 hover:shadow-[0_0_24px_rgba(212,175,55,0.16)];
+      }
+
+      .panel {
+        @apply rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-gold;
+      }
+
+      .metric-card {
+        @apply rounded-[1.5rem] border border-white/10 bg-black/20 p-5;
+      }
+
+      .service-card {
+        @apply relative overflow-hidden rounded-[1.75rem] border border-gold/15 bg-gradient-to-b from-white/[0.06] via-white/[0.04] to-white/[0.02] p-6 shadow-gold transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-gold-lg;
+      }
+
+      .edge-card {
+        @apply rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:border-gold/40 hover:bg-white/[0.045];
+      }
+
+      .process-card {
+        @apply rounded-[1.5rem] border border-white/10 bg-black/20 p-6 transition duration-300 hover:border-gold/35 hover:bg-white/[0.04];
+      }
+
+      .price-row {
+        @apply flex items-start justify-between gap-4 border-b border-white/8 py-4 last:border-b-0;
+      }
+
+      .price-label {
+        @apply text-sm font-semibold tracking-[0.03em] text-white;
+      }
+
+      .price-meta {
+        @apply mt-1 text-[0.65rem] uppercase tracking-[0.28em] text-mist;
+      }
+
+      .price-value {
+        @apply text-right text-sm font-semibold text-gold;
+      }
+
+      .icon-badge {
+        @apply flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/35 bg-gold/10 text-gold;
+      }
+
+      .swatch {
+        @apply inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-gold;
+      }
+
+      .info-pill {
+        @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-white/85;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute -left-28 top-12 h-80 w-80 rounded-full bg-gold/10 blur-3xl"></div>
+    <div class="absolute right-[-5rem] top-1/4 h-72 w-72 rounded-full bg-emerald/10 blur-3xl"></div>
+    <div class="absolute bottom-[-8rem] left-1/3 h-72 w-72 rounded-full bg-gold/5 blur-3xl"></div>
+  </div>
+
+  <svg class="hidden" aria-hidden="true" focusable="false">
+    <symbol id="rrr-emblem" viewBox="0 0 360 420">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+        <path d="M180 32C151 60 142 92 142 128c0 27 12 52 38 74 26-22 38-47 38-74 0-36-9-68-38-96Z"></path>
+        <path d="M129 82C96 94 74 118 58 150c22 21 50 33 85 36-2-38-7-73-14-104Z"></path>
+        <path d="M231 82c-7 31-12 66-14 104 35-3 63-15 85-36-16-32-38-56-71-68Z"></path>
+        <path d="M93 130C60 136 36 154 18 176c25 20 55 30 90 29-4-27-9-52-15-75Z"></path>
+        <path d="M267 130c-6 23-11 48-15 75 35 1 65-9 90-29-18-22-42-40-75-46Z"></path>
+      </g>
+      <g fill="currentColor">
+        <path d="M180 64 170 72 180 80 190 72Z"></path>
+        <path d="M180 82 168 91 180 101 192 91Z"></path>
+        <path d="M180 104 166 114 180 126 194 114Z"></path>
+        <path d="M180 130 167 140 180 152 193 140Z"></path>
+        <path d="M180 156 169 165 180 175 191 165Z"></path>
+        <path d="M180 178 171 186 180 195 189 186Z"></path>
+      </g>
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
+        <g transform="translate(28 0)">
+          <path d="M0 338V204H66C98 204 118 225 118 251C118 277 98 298 66 298H24"></path>
+          <path d="M24 338V226H66C84 226 98 237 98 251C98 265 84 276 66 276H24"></path>
+          <path d="M24 298 95 370"></path>
+          <path d="M44 298 115 370"></path>
+        </g>
+        <g transform="translate(121 0)">
+          <path d="M0 338V204H66C98 204 118 225 118 251C118 277 98 298 66 298H24"></path>
+          <path d="M24 338V226H66C84 226 98 237 98 251C98 265 84 276 66 276H24"></path>
+          <path d="M24 298 95 370"></path>
+          <path d="M44 298 115 370"></path>
+        </g>
+        <g transform="translate(214 0)">
+          <path d="M0 338V204H66C98 204 118 225 118 251C118 277 98 298 66 298H24"></path>
+          <path d="M24 338V226H66C84 226 98 237 98 251C98 265 84 276 66 276H24"></path>
+          <path d="M24 298 95 370"></path>
+          <path d="M44 298 115 370"></path>
+        </g>
+      </g>
+    </symbol>
+  </svg>
+
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-midnight/85 backdrop-blur-xl">
+    <nav class="shell flex items-center justify-between py-4">
+      <a href="#top" class="flex items-center gap-4">
+        <svg class="rrr-emblem rrr-emblem--nav" viewBox="0 0 360 420" aria-hidden="true">
+          <use href="#rrr-emblem"></use>
+        </svg>
+        <span class="hidden sm:block">
+          <span class="block text-sm font-semibold uppercase tracking-[0.24em] text-white">ResetReviveRefocus</span>
+          <span class="mt-0.5 block text-[0.63rem] uppercase tracking-[0.34em] text-mist">Mobile Wellness &amp; Physical Therapy</span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-8 lg:flex">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#clinical-edge">The Clinical Edge</a>
+        <a class="nav-link" href="#how-it-works">How It Works</a>
+        <a
+          class="btn-secondary"
+          href="https://wa.me/27826130737?text=Hi!%20I%20would%20like%20to%20book%20a%20ResetReviveRefocus%20session."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book Now
+        </a>
+      </div>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white transition duration-300 hover:border-gold/50 hover:text-gold lg:hidden"
+        aria-label="Toggle navigation menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 17h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="shell hidden pb-4 lg:hidden">
+      <div class="panel flex flex-col gap-4 p-4">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#clinical-edge">The Clinical Edge</a>
+        <a class="nav-link" href="#how-it-works">How It Works</a>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="info-pill">Elite</span>
+          <span class="info-pill">Clinical</span>
+          <span class="info-pill">Restorative</span>
+        </div>
+        <a
+          class="btn-secondary w-full"
+          href="https://wa.me/27826130737?text=Hi!%20I%20would%20like%20to%20book%20a%20ResetReviveRefocus%20session."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative overflow-hidden py-10 sm:py-14 lg:py-20">
+      <div class="shell">
+        <div class="panel relative overflow-hidden px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.16),_transparent_34%)]"></div>
+          <div class="absolute left-0 top-20 hidden h-px w-28 bg-gradient-to-r from-gold/60 to-transparent lg:block"></div>
+          <div class="absolute bottom-14 right-0 hidden h-px w-28 bg-gradient-to-l from-emerald/60 to-transparent lg:block"></div>
+
+          <div class="relative grid items-center gap-14 lg:grid-cols-[0.84fr_1.16fr]">
+            <div class="fade-up">
+              <div class="flex flex-wrap gap-3">
+                <span class="kicker">Cape Town &amp; Surrounds</span>
+                <span class="info-pill">Elite</span>
+                <span class="info-pill">Clinical</span>
+                <span class="info-pill">Restorative</span>
+              </div>
+
+              <p class="mt-8 text-xs uppercase tracking-[0.42em] text-gold/85">Premium Mobile Recovery</p>
+              <h1 class="mt-5 font-display text-5xl leading-[0.94] tracking-tight text-white sm:text-6xl xl:text-7xl">
+                Master Your Body.
+                <span class="block text-gold">Reset Your Mind.</span>
+              </h1>
+              <p class="mt-6 max-w-2xl text-base leading-8 text-mist sm:text-lg">
+                Premium mobile physical therapy and elite muscle recovery. Delivered directly to your sanctuary in Cape Town &amp; Surrounds.
+              </p>
+
+              <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+                <a
+                  class="btn-primary"
+                  href="https://wa.me/27826130737?text=Hi!%20I%20would%20like%20to%20book%20a%20ResetReviveRefocus%20session."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book Your Session
+                </a>
+                <a class="btn-secondary" href="#services">View Treatments</a>
+              </div>
+
+              <div class="mt-10 grid gap-4 sm:grid-cols-3">
+                <div class="metric-card">
+                  <p class="text-[0.65rem] uppercase tracking-[0.28em] text-mist">Focus</p>
+                  <p class="mt-3 font-display text-2xl text-gold">Biomechanics</p>
+                  <p class="mt-2 text-sm leading-6 text-mist">Precision-led treatment, not generic relaxation.</p>
+                </div>
+                <div class="metric-card">
+                  <p class="text-[0.65rem] uppercase tracking-[0.28em] text-mist">Format</p>
+                  <p class="mt-3 font-display text-2xl text-gold">Private Mobile</p>
+                  <p class="mt-2 text-sm leading-6 text-mist">Clinical care delivered where recovery is most useful.</p>
+                </div>
+                <div class="metric-card">
+                  <p class="text-[0.65rem] uppercase tracking-[0.28em] text-mist">Booking</p>
+                  <p class="mt-3 font-display text-2xl text-gold">50% Deposit</p>
+                  <p class="mt-2 text-sm leading-6 text-mist">Your slot is secured after call-out confirmation.</p>
+                </div>
+              </div>
+
+              <div class="mt-10 border-t border-white/10 pt-6">
+                <div class="flex flex-wrap items-center gap-3">
+                  <span class="text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-mist">Brand Palette</span>
+                  <span class="swatch border-white/10 bg-black/20 text-white">#121212</span>
+                  <span class="swatch">#D4AF37</span>
+                  <span class="swatch border-emerald/50 bg-emerald/10 text-emerald">#0B6623</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="fade-up-delay">
+              <div class="relative mx-auto w-full max-w-[40rem]">
+                <div class="absolute right-0 top-1/2 hidden -translate-y-1/2 xl:flex flex-col gap-4">
+                  <span class="h-2.5 w-2.5 rounded-full bg-gold"></span>
+                  <span class="h-2.5 w-2.5 rounded-full border border-gold/70"></span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-emerald"></span>
+                  <span class="h-2.5 w-2.5 rounded-full border border-white/50"></span>
+                </div>
+
+                <div class="flex flex-wrap items-start justify-between gap-4 border-b border-white/10 pb-5">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.32em] text-mist">Signature Identity</p>
+                    <p class="mt-2 font-display text-2xl text-gold">Burnished gold monogram, clinical calm.</p>
+                  </div>
+                  <div class="rounded-full border border-gold/25 bg-gold/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-gold">
+                    Private Concierge
+                  </div>
+                </div>
+
+                <div class="mt-8 rounded-[1.85rem] border border-white/10 bg-black/25 px-6 py-8 sm:px-8">
+                  <svg class="rrr-emblem rrr-emblem--hero" viewBox="0 0 360 420" aria-hidden="true">
+                    <use href="#rrr-emblem"></use>
+                  </svg>
+
+                  <div class="mt-6 text-center">
+                    <p class="text-[clamp(2rem,5vw,3.6rem)] font-semibold uppercase tracking-[0.18em] text-white">
+                      Reset Revive
+                    </p>
+                    <p class="mt-1 text-[clamp(1.15rem,2.3vw,1.55rem)] font-medium uppercase tracking-[0.52em] text-white/92">
+                      Refocus
+                    </p>
+                    <div class="mt-5 flex items-center justify-center gap-4 sm:gap-5">
+                      <span class="h-px w-14 bg-gold/70 sm:w-20"></span>
+                      <span class="text-[0.72rem] font-semibold uppercase tracking-[0.44em] text-gold">Mobile Wellness</span>
+                      <span class="h-px w-14 bg-gold/70 sm:w-20"></span>
+                    </div>
+                    <p class="mx-auto mt-5 max-w-md text-sm leading-7 text-mist">
+                      Precision-led physical therapy and muscle recovery, delivered privately with a premium clinical standard.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="scroll-mt-28 py-16 sm:py-20 lg:py-24">
+      <div class="shell">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <span class="kicker">Service Menu</span>
+            <h2 class="title mt-6">Mobile Wellness Menu</h2>
+            <p class="body-copy mt-4 max-w-2xl">
+              A refined recovery menu designed for localized tension release, integrated full-body reset work, and carefully selected add-ons.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="info-pill">Targeted Relief</span>
+            <span class="info-pill">Full Body Integration</span>
+            <span class="info-pill">Clinical Add-Ons</span>
+          </div>
+        </div>
+
+        <div class="mt-12 grid gap-6 xl:grid-cols-3">
+          <article class="service-card fade-up">
+            <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-5">
+              <div>
+                <p class="font-display text-3xl text-white">Targeted Relief</p>
+                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-gold">Focus Areas</p>
+              </div>
+              <span class="rounded-full border border-gold/25 bg-gold/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-gold">01</span>
+            </div>
+
+            <div class="mt-4">
+              <div class="price-row">
+                <div>
+                  <p class="price-label">Head, Neck &amp; Shoulders</p>
+                  <p class="price-meta">30 Min | 60 Min</p>
+                </div>
+                <p class="price-value">R200 | R400</p>
+              </div>
+              <div class="price-row">
+                <div>
+                  <p class="price-label">Back, Arms &amp; Hands</p>
+                  <p class="price-meta">30 Min | 60 Min</p>
+                </div>
+                <p class="price-value">R200 | R400</p>
+              </div>
+              <div class="price-row">
+                <div>
+                  <p class="price-label">Glutes, Hamstrings &amp; Calves</p>
+                  <p class="price-meta">30 Min | 60 Min</p>
+                </div>
+                <p class="price-value">R200 | R400</p>
+              </div>
+              <div class="price-row">
+                <div>
+                  <p class="price-label">Feet Revival</p>
+                  <p class="price-meta">30 Min</p>
+                </div>
+                <p class="price-value">R200</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card fade-up-delay">
+            <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-5">
+              <div>
+                <p class="font-display text-3xl text-white">The Complete Reset</p>
+                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-gold">Full Body Integration</p>
+              </div>
+              <span class="rounded-full border border-gold/25 bg-gold/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-gold">02</span>
+            </div>
+
+            <div class="mt-4">
+              <div class="price-row">
+                <div>
+                  <p class="price-label">90-Minute Deep Recovery</p>
+                  <p class="price-meta">Integrated tension release</p>
+                </div>
+                <p class="price-value">R600</p>
+              </div>
+              <div class="price-row">
+                <div>
+                  <p class="price-label">120-Minute Elite Wellness</p>
+                  <p class="price-meta">Extended clinical-luxury session</p>
+                </div>
+                <p class="price-value">R800</p>
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+              <p class="text-xs uppercase tracking-[0.3em] text-mist">Best For</p>
+              <p class="mt-3 text-sm leading-7 text-mist">
+                Post-training recovery, corporate tension accumulation, and clients who want a full nervous-system reset without leaving home.
+              </p>
+            </div>
+          </article>
+
+          <article class="service-card fade-up-delay">
+            <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-5">
+              <div>
+                <p class="font-display text-3xl text-white">Clinical Add-Ons</p>
+                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-gold">Enhance Your Recovery</p>
+              </div>
+              <span class="rounded-full border border-gold/25 bg-gold/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-gold">03</span>
+            </div>
+
+            <div class="mt-4">
+              <div class="price-row">
+                <div>
+                  <p class="price-label">Dry Cupping / Wet Cupping</p>
+                  <p class="price-meta">Clinical decompression support</p>
+                </div>
+                <p class="price-value">R150 / R300</p>
+              </div>
+              <div class="price-row">
+                <div>
+                  <p class="price-label">Face Massage</p>
+                  <p class="price-meta">Jaw, temple, and facial tension release</p>
+                </div>
+                <p class="price-value">R100</p>
+              </div>
+              <div class="price-row">
+                <div>
+                  <p class="price-label">Face or Foot Mask</p>
+                  <p class="price-meta">Restorative finishing treatment</p>
+                </div>
+                <p class="price-value">R50</p>
+              </div>
+              <div class="price-row">
+                <div>
+                  <p class="price-label">Grooming / Haircut</p>
+                  <p class="price-meta">Convenience add-on</p>
+                </div>
+                <p class="price-value">R100</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-8 rounded-[1.75rem] border border-gold/20 bg-white/[0.03] px-6 py-5">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-sm leading-7 text-mist">Call-out fees are calculated based on your specific location.</p>
+            <a
+              class="btn-secondary"
+              href="https://wa.me/27826130737?text=Hi!%20I%20would%20like%20to%20book%20a%20ResetReviveRefocus%20session."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clinical-edge" class="scroll-mt-28 py-16 sm:py-20 lg:py-24">
+      <div class="shell">
+        <div class="panel px-6 py-8 sm:px-8 lg:px-10">
+          <div class="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+            <div>
+              <span class="kicker">Why Choose Us</span>
+              <h2 class="title mt-6">The Clinical Edge</h2>
+              <p class="body-copy mt-4 max-w-xl">
+                ResetReviveRefocus is built around anatomy, biomechanics, and the lived reality of people who want premium recovery without sacrificing privacy or time.
+              </p>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-3">
+              <article class="edge-card">
+                <div class="icon-badge">
+                  <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3c2.2 0 4 1.8 4 4 0 1.4-.7 2.6-1.8 3.3"></path>
+                    <path d="M12 3C9.8 3 8 4.8 8 7c0 1.4.7 2.6 1.8 3.3"></path>
+                    <path d="M10.8 10.2 12 11.5l1.2-1.3"></path>
+                    <path d="M12 11.5v2.2"></path>
+                    <path d="M10.8 14.3 12 15.6l1.2-1.3"></path>
+                    <path d="M12 15.6V18"></path>
+                    <path d="M10.8 18 12 19.3l1.2-1.3"></path>
+                    <path d="M7 21h10"></path>
+                  </svg>
+                </div>
+                <h3 class="mt-5 font-display text-2xl text-white">Anatomical Precision</h3>
+                <p class="mt-4 text-sm leading-7 text-mist">
+                  We target specific nerve plexuses and muscle fascia, not just surface-level rubbing.
+                </p>
+              </article>
+
+              <article class="edge-card">
+                <div class="icon-badge">
+                  <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 10.5 12 3l9 7.5"></path>
+                    <path d="M5.5 9.5V21h13V9.5"></path>
+                    <path d="M9.5 21v-5.5h5V21"></path>
+                  </svg>
+                </div>
+                <h3 class="mt-5 font-display text-2xl text-white">Your Sanctuary</h3>
+                <p class="mt-4 text-sm leading-7 text-mist">
+                  Zero traffic, zero waiting rooms. We bring the clinical setup to your home.
+                </p>
+              </article>
+
+              <article class="edge-card">
+                <div class="icon-badge">
+                  <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8.5"></circle>
+                    <circle cx="12" cy="12" r="4.2"></circle>
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <path d="M12 2.5v2.2"></path>
+                    <path d="M12 19.3v2.2"></path>
+                    <path d="M2.5 12h2.2"></path>
+                    <path d="M19.3 12h2.2"></path>
+                  </svg>
+                </div>
+                <h3 class="mt-5 font-display text-2xl text-white">Tailored Recovery</h3>
+                <p class="mt-4 text-sm leading-7 text-mist">
+                  From corporate tension to athletic overload, every session is customized to your biomechanics.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="scroll-mt-28 py-16 sm:py-20 lg:py-24">
+      <div class="shell">
+        <span class="kicker">Booking Flow</span>
+        <h2 class="title mt-6">How It Works</h2>
+        <p class="body-copy mt-4 max-w-2xl">
+          A straightforward concierge process that makes booking feel premium, fast, and clinically organized from the first message.
+        </p>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+          <article class="process-card">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-display text-2xl text-gold">1</div>
+            <h3 class="mt-5 font-display text-2xl text-white">Choose your treatment</h3>
+            <p class="mt-4 text-sm leading-7 text-mist">
+              Choose your treatment from our menu based on your focus area, recovery need, or preferred session length.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-display text-2xl text-gold">2</div>
+            <h3 class="mt-5 font-display text-2xl text-white">Send us your details</h3>
+            <p class="mt-4 text-sm leading-7 text-mist">
+              WhatsApp us your selection, location, and preferred time so we can confirm travel and availability.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-display text-2xl text-gold">3</div>
+            <h3 class="mt-5 font-display text-2xl text-white">Secure your slot</h3>
+            <p class="mt-4 text-sm leading-7 text-mist">
+              We calculate your call-out fee and secure your slot with a 50% deposit.
+            </p>
+          </article>
+        </div>
+
+        <div class="mt-10 rounded-[1.75rem] border border-emerald/25 bg-emerald/10 px-6 py-6">
+          <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-gold">Direct-to-WhatsApp Booking</p>
+              <p class="mt-2 text-sm leading-7 text-mist">
+                Fastest route to booking: message us with your treatment, location, and preferred time.
+              </p>
+            </div>
+            <a
+              class="btn-primary"
+              href="https://wa.me/27826130737?text=Hi!%20I%20would%20like%20to%20book%20a%20ResetReviveRefocus%20session."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Your Session
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 py-10">
+    <div class="shell text-center">
+      <div class="mx-auto flex w-fit items-center gap-4">
+        <svg class="rrr-emblem rrr-emblem--footer" viewBox="0 0 360 420" aria-hidden="true">
+          <use href="#rrr-emblem"></use>
+        </svg>
+        <p class="font-display text-2xl text-gold">ResetReviveRefocus © 2026</p>
+      </div>
+      <p class="mt-4 text-sm text-mist">
+        Contact:
+        <a class="text-white transition hover:text-gold" href="tel:+27826130737">+27 82 613 0737</a>
+      </p>
+      <p class="mt-2 text-sm text-mist">Operating in Cape Town &amp; Surrounds.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    mobileLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      const clickedInsideMenu = mobileMenu.contains(event.target);
+      const clickedToggle = menuToggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedToggle && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+</body>
+</html>
